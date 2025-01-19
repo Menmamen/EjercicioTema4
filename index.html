@@ -1,41 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carmen Montalvo Luque">"
     <title>Ejercicio Tema 4</title>
+
+    <!-- He añadido estilos para ordenar los botones y el texto de manera más coherente y fácil de ver -->
+    <style>
+        /* Estilos globales */
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif; /* Para una tipografía más uniforme */
+
+        }
+
+        /* Barra lateral fija de botones */
+        .sidebar {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            padding-top: 20px;
+            box-sizing: border-box;
+            border-right: 2px solid #ddd;
+        }
+
+        /* Los botones dentro de la barra lateral */
+        .sidebar button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Contenedor de contenido principal */
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* Estilo similar para h1, h2 y #listado */
+        .main-content h1{
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 25px;
+        }
+
+        .main-content h2{
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        #listado {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+    </style>
 </head>
 
 <body>
-    <h2>Ejercicio Tema 4</h2>
-    <h3>Carmen Montalvo Luque</h3>
-    <div id="listado"></div>
-    <br>
-    <div>
+    <div class="sidebar">
         <button onclick="agregarAutores()">Agregar Autores</button>
         <button onclick="agregarDiscos()">Agregar Disco</button>
-    </div>
-    <br>
-    <div>
         <button type="button" id="listAuto">Listar Autores</button>
         <button type="button" id="listar">Listar Coleccion por Tipo</button>
         <button type="button" id="mostrar">Mostrar Coleccion Completa</button>
         <button type="button" id="ocultar">Ocultar Lista</button>
-    </div>
-    <br>
-    <div>
         <button onclick="borrarDiscos()">Borrar Disco</button>
         <button onclick="prestarDisco()">Prestar Disco</button>
-    </div>
-    <br>
-    <div>
+        <button onclick="devolverDisco()">Devolver Disco</button>
         <button onclick="resetearColeccion()">Borrar la Colección</button>
         <button onclick="terminar()">Cerrar el Programa</button>
     </div>
 
+    <div class="main-content">
+        <h1>Ejercicio Tema 4</h1>
+        <h2>Carmen Montalvo Luque</h2>
+        <div id="listado"></div>
+    </div>
 
     <script type="module" src="./scripts/main.js"></script>
+
 </body>
 
 </html>
